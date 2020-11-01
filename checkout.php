@@ -63,10 +63,6 @@ curl_close($curl);
 
 $result = json_decode($result);
 
-foreach ($result as $key => $value) {
-    echo "<br>".$key.' => '.var_dump($value);
-}
-
 if (isset($result->external_reference)) {
     echo "Exists...";
     include __DIR__.'/header.php';
