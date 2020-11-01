@@ -24,14 +24,14 @@ switch($_POST["type"]) {
 $database = sqlite_open(__DIR__.'/database.sqlite');
 
 sqlite_query($database, 'insert into webhooks(json) values(\''.json_encode([
-    'id' => $_POST['id'],
-    'live_mode' => $_POST['live_mode'],
-    'type' => $_POST['type'],
-    'date_created' => $_POST['date_created'],
-    'application_id' => $_POST['application_id'],
-    'user_id' => $_POST['user_id'],
-    'version' => $_POST['version'],
-    'api_version' => $_POST['api_version'],
-    'action' => $_POST['action'],
-    'data' => $_POST['data'],
+    'id' => isset($_POST['id']) ? $_POST['id'] : 'null',
+    'live_mode' => isset($_POST['live_mode']) ? $_POST['live_mode'] : 'null',
+    'type' => isset($_POST['type']) ? $_POST['type'] : 'null',
+    'date_created' => isset($_POST['date_created']) ? $_POST['date_created'] : 'null',
+    'application_id' => isset($_POST['application_id']) ? $_POST['application_id'] : 'null',
+    'user_id' => isset($_POST['user_id']) ? $_POST['user_id'] : 'null',
+    'version' => isset($_POST['version']) ? $_POST['version'] : 'null',
+    'api_version' => isset($_POST['api_version']) ? $_POST['api_version'] : 'null',
+    'action' => isset($_POST['action']) ? $_POST['action'] : 'null',
+    'data' => isset($_POST['data']) ? $_POST['data'] : 'null',
 ]).'\');');
