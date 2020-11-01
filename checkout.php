@@ -19,7 +19,7 @@ $payload = json_encode([
             'currency_id' => "MXN",
             'description' => '​ Dispositivo móvil de Tienda e-commerce​',
             'external_reference' => 'ja.garciavega@outlook.com',
-            'picture_url' => (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off' ? 'https://' : 'http://').$_SERVER['SEVER_NAME'].$_POST['product-img'],
+            'picture_url' => 'https://mp-test-jorge.herokuapp.com'.$_POST['product-img'],
         ],
     ],
     'payer' => [
