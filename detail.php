@@ -130,7 +130,14 @@
                                             <?php echo "$" . $_POST['unit'] ?>
                                         </h3>
                                     </div>
-                                    <button type="submit" class="mercadopago-button" formmethod="post">Pagar</button>
+                                    <!--script  src="https://www.mercadopago.com.mx/integrations/v1/web-payment-checkout.js" data-preference-id="<?php require __DIR__.'/MPIntegration.php'; echo $preference->id; ?>"></script-->
+                                    <form action="/checkout.php" method="GET">
+                                        <input type="hidden" name="product-name" value="<?php echo $_POST['title']?>">
+                                        <input type="hidden" name="product-unit" value="<?php echo $_POST['unit']?>">
+                                        <input type="hidden" name="product-price" value="<?php echo $_POST['price']?>">
+                                        <input type="hidden" name="product-img" value="<?php echo explode('.',$_POST['img'])[1].'.'.explode('.',$_POST['img'])[2] ?>">
+                                        <button type="submit" class="mercadopago-button">Pagar</button>
+                                    </form>
                                 </div>
                             </div>
                         </div>
