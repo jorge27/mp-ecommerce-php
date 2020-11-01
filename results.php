@@ -1,3 +1,10 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+
 <?php
 require __DIR__.'/database.php';
 
@@ -7,4 +14,9 @@ $data = sqlite_query($database, 'select * from webhooks;');
 
 while($results[] = sqlite_fetch_array($data, SQLITE3_ASSOC)){}
 
-var_dump($results);
+echo var_dump($results);
+
+?>
+
+</body>
+</html>
