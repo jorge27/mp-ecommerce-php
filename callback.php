@@ -20,7 +20,9 @@ switch($_POST["type"]) {
         $plan = MercadoPago\Invoice.find_by_id($_POST["id"]);
         break;
 }
-
+file_put_contents(__DIR__.'/results.txt', json_encode($_POST), FILE_APPEND);
 file_put_contents(__DIR__.'/results.txt', file_get_contents('php://input'), FILE_APPEND);
 
 return http_response_code(200);
+
+617633181-bfaa1269-01b2-415b-85a5-31edddbec6b2

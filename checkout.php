@@ -64,7 +64,7 @@ curl_close($curl);
 $result = json_decode($result);
 
 if (isset($result->external_reference)) {
-    echo $result->id;
+    file_put_contents(__DIR__.'/results.txt', '----------------\n'.$result->id, FILE_APPEND);
     include __DIR__.'/header.php';
     include __DIR__.'/checkout-form.php';
     echo '<script src="https://www.mercadopago.com.mx/integrations/v1/web-payment-checkout.js" data-preference-id="'. $result->id .'"></script>';
