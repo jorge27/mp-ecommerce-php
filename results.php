@@ -5,4 +5,6 @@ $database = sqlite_open(__DIR__.'/database.sqlite');
 
 $data = sqlite_query($database, 'select * from webhooks;');
 
-var_dump($data);
+while($results[] = sqlite_fetch_array($data, SQLITE3_ASSOC)){}
+
+var_dump($results);

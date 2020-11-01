@@ -23,7 +23,7 @@ switch($_POST["type"]) {
 
 $database = sqlite_open(__DIR__.'/database.sqlite');
 
-sqlite_query($database, 'insert into webhooks(json) values('.json_encode([
+sqlite_query($database, 'insert into webhooks(json) values("'.json_encode([
     'id' => $_POST['id'],
     'live_mode' => $_POST['live_mode'],
     'type' => $_POST['type'],
@@ -34,4 +34,4 @@ sqlite_query($database, 'insert into webhooks(json) values('.json_encode([
     'api_version' => $_POST['api_version'],
     'action' => $_POST['action'],
     'data' => $_POST['data'],
-]).');');
+]).'");');
