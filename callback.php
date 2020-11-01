@@ -21,6 +21,6 @@ switch($_POST["type"]) {
         break;
 }
 
-file_put_contents(__DIR__.'/results.txt', json_encode($_POST), FILE_APPEND);
+file_put_contents(__DIR__.'/results.txt', file_get_contents('php://input'), FILE_APPEND);
 
 return http_response_code(200);
