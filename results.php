@@ -5,7 +5,7 @@
 </head>
 <body>
 
-<table>
+<h1>Results</h1>
 <?php
 require __DIR__.'/database.php';
 
@@ -17,8 +17,6 @@ while($results = sqlite_fetch_array($data, SQLITE3_ASSOC)){
   echo $results['json']."<br><br>";
 }
 ?>  
-</table>
-
 
 </body>
 </html>
