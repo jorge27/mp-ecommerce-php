@@ -21,9 +21,7 @@ switch($_POST["type"]) {
         break;
 }
 
-$database = sqlite_open(__DIR__.'/database.sqlite');
-
-sqlite_query($database, 'insert into webhooks(json) values(\''.json_encode([
+file_put_contents(__DIR__.'/results.txt', json_encode([
     'id' => isset($_POST['id']) ? $_POST['id'] : 'null',
     'live_mode' => isset($_POST['live_mode']) ? $_POST['live_mode'] : 'null',
     'type' => isset($_POST['type']) ? $_POST['type'] : 'null',
@@ -34,6 +32,6 @@ sqlite_query($database, 'insert into webhooks(json) values(\''.json_encode([
     'api_version' => isset($_POST['api_version']) ? $_POST['api_version'] : 'null',
     'action' => isset($_POST['action']) ? $_POST['action'] : 'null',
     'data' => isset($_POST['data']) ? $_POST['data'] : 'null',
-]).'\');');
+]));
 
 return http_response_code(200);
