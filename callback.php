@@ -35,3 +35,5 @@ sqlite_query($database, 'insert into webhooks(json) values(\''.json_encode([
     'action' => isset($_POST['action']) ? $_POST['action'] : 'null',
     'data' => isset($_POST['data']) ? $_POST['data'] : 'null',
 ]).'\');');
+
+return http_response_code(200);
