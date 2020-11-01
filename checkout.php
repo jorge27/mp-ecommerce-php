@@ -41,7 +41,7 @@ $payload = json_encode([
             ['id' => 'amex']
         ],
     ],
-    'installments' => (int)$_POST['installments'],
+    'installments' => 6,
     'back_urls' => [
         'success' => 'https://mp-test-jorge.herokuapp.com/thankyou.php',
         'pending' => 'https://mp-test-jorge.herokuapp.com/pending.php',
@@ -64,7 +64,7 @@ curl_close($curl);
 $result = json_decode($result);
 
 if (isset($result->external_reference)) {
-    echo "Exists...";
+    echo $result->id;
     include __DIR__.'/header.php';
     include __DIR__.'/checkout-form.php';
     echo '<script src="https://www.mercadopago.com.mx/integrations/v1/web-payment-checkout.js" data-preference-id="'. $result->id .'"></script>';
