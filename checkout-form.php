@@ -19,6 +19,7 @@
         </div>
         <div>
             <label for="phone">Telefono</label>
+            <input type="text" name="code_phone" value="<?php echo isset($_POST['code_phone']) ? $_POST['code_phone'] : '+52'; ?>">
             <input type="text" name="phone" value="<?php echo $_POST['phone']; ?>">
         </div>
         <div>
