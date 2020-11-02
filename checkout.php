@@ -25,8 +25,9 @@ $preference->back_urls = [
     'failure' => 'https://mp-test-jorge.herokuapp.com/failure.php',
 ];
 $preference->external_reference = 'ja.garciavega@outlook.com';
-
 $preference->auto_return = 'approved';
+$preference->integrator_id = 'dev_24c65fb163bf11ea96500242ac130004';
+$preference->x_integrator_id = 'dev_24c65fb163bf11ea96500242ac130004';
 
 $payer = new MercadoPago\Payer();
 $payer->name = $_POST['name'];
